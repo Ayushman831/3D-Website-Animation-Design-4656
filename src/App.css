@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0f;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(120, 119, 198, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(119, 198, 255, 0.04) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0f 0%, #0f0f14 100%);
+  position: relative;
+}
+
+.floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.particle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: linear-gradient(45deg, rgba(120, 119, 198, 0.4), rgba(255, 119, 198, 0.2));
+  border-radius: 50%;
+  animation: float 25s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+.subtle-glow {
+  box-shadow: 0 0 20px rgba(120, 119, 198, 0.1);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .app {
+    font-size: 14px;
+  }
+}
